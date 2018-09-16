@@ -3,6 +3,7 @@ public class SortedArray
 {
    private int next;
    private int size;
+   private int i;
    private String inputString;
    private StudentListing[] data;
    public SortedArray ()
@@ -11,11 +12,21 @@ public class SortedArray
       inputString = JOptionPane.showInputDialog("Enter data set size");
          size = Integer.parseInt(inputString);
       data = new StudentListing[size];
+            for(i=0; i<size; ++i) // For loop adds values to the members of the array
+           {
+              data[i] = new StudentListing();
+              data[i].input(); //allows user to input array member information
+           }
    }
    public SortedArray (int s)
    {
       next = 0;
       data = new StudentListing[s];
+      for(i=0; i<s; ++i) // For loop adds values to the members of the array
+           {
+              data[i] = new StudentListing();
+              data[i].input(); //allows user to input array member information
+           }
       size = s;
    }
    public boolean insert (StudentListing newSL)
